@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M4ABP3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="container py-4">
+            <header class="pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+                    <span class="fs-4">M4ABP4</span>
+                </a>
+            </header>
+
+            <!-- Nueva sección para las funciones -->
+            <div class="row align-items-md-stretch">
+                <!-- Crear arreglo de dobles -->
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2 class="text-center">Crear Arreglo de Dobles</h2>
+                        <p>Ingrese un número para generar un arreglo donde cada elemento es el doble del anterior,
+                            comenzando desde 1.</p>
+                        <div class="mb-3">
+                            <h5>Número de elementos:</h5>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="numeroElementos" min="1"
+                                    placeholder="Ingrese un número" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="mostrarArregloDoble()">Generar</button>
+                        <div class="mb-3" id="resultadoArregloDoble"></div>
+                    </div>
+                </div>
+
+                <!-- Obtener mayor número -->
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2 class="text-center">Obtener Mayor Número</h2>
+                        <p>Ingrese un arreglo de exactamente 10 números separados por comas para encontrar el mayor
+                            número.
+                        </p>
+                        <div class="mb-3">
+                            <h5>Arreglo de números:</h5>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="arregloNumeros"
+                                    placeholder="Ejemplo: 1,23,45,67,89,2,34,56,78,90" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="mostrarMayorNumero()">Calcular</button>
+                        <div class="mt-3" id="resultadoMayorNumero" style="font-weight: bold; color: #fff;"></div>
+                    </div>
+                </div>
+
+                <!-- Obtener día de la semana -->
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2 class="text-center">Obtener Día de la Semana</h2>
+                        <p>Ingrese un número del 1 al 7 para obtener el día de la semana correspondiente.</p>
+                        <div class="mb-3">
+                            <h5>Número del día:</h5>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="numeroDia" min="1" max="7"
+                                    placeholder="Ingrese un número del 1 al 7" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="mostrarDiaSemana()">Calcular</button>
+                        <div class="mb-3" id="resultadoDiaSemana"></div>
+                    </div>
+                </div>
+
+                <!-- Buscar elemento en arreglo -->
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2 class="text-center">Buscar Elemento en Arreglo</h2>
+                        <p>Ingrese un arreglo de números separados por comas y un número a buscar.</p>
+                        <div class="mb-3">
+                            <h5>Arreglo de números:</h5>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="arregloBuscar"
+                                    placeholder="Ejemplo: 10,20,30,40" required>
+                            </div>
+                            <h5>Número a buscar:</h5>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="numeroBuscar"
+                                    placeholder="Ingrese el número a buscar" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"
+                            onclick="mostrarBusquedaElemento()">Buscar</button>
+                        <div class="mb-3" id="resultadoBusquedaElemento"></div>
+                    </div>
+                </div>
+
+                <!-- Ordenar arreglo ascendentemente -->
+                <div class="col-md-12">
+                    <div class="h-100 p-5 text-bg-dark rounded-3 text-center">
+                        <h2 class="text-center">Ordenar Arreglo Ascendentemente</h2>
+                        <p>Ingrese un arreglo de números separados por comas para ordenarlos de forma ascendente.</p>
+                        <div class="mb-3">
+                            <h5>Arreglo de números:</h5>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="arregloOrdenar"
+                                    placeholder="Ejemplo: 5,3,8,1,2" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"
+                            onclick="mostrarArregloOrdenado()">Ordenar</button>
+                        <div class="mb-3" id="resultadoArregloOrdenado"></div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                © 2025 Francisco Hidalgo
+            </footer>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/funciones.js"></script>
+    <script src="./assets/js/funcionesUI.js"></script>
+</body>
+
+</html>
